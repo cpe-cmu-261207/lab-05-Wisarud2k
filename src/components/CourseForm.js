@@ -21,6 +21,9 @@ const CourseForm = () => {
       //clear input
       setInput({ID:"",grade:"4",credit:"1"});
       document.getElementById('num').value='';
+      document.querySelector('#g').value='';
+      document.querySelector('#c').value='';
+
     }else{
       dispatch({
         type:"ERROR"
@@ -35,17 +38,17 @@ const CourseForm = () => {
           <input id="num" type = "number" 
           placeholder="CourseID" 
           onChange = {(e) => setInput({...input,ID: e.currentTarget.value})}></input>
-          <select onChange ={(e) => setInput({...input,grade: e.currentTarget.value})} >
+          <select id="g" onChange ={(e) => setInput({...input,grade: e.currentTarget.value})} >
             {GRADES.map((item) => {
               return <option value ={item.value} >{item.name}</option>
             })}
           </select>
-          <select onChange ={(e) => setInput({...input,credit: e.currentTarget.value})}>
+          <select id="c" onChange ={(e) => setInput({...input,credit: e.currentTarget.value})}>
             {CREDITS.map((item) => {
               return <option value = {item}> {item}</option>
             })}
           </select>
-          <button type="submit">
+          <button id="add_button" type="submit">
             ADD
           </button>
         </div>

@@ -12,16 +12,16 @@ const {dispatch} = useContext(context)
   }
 
   return (
-    <>
+    <div>
       <p>Course ID : {id} 
         Grade : {grade} 
         Credit : {credit}
-         <button onClick = {removeCard}>
+         <button id="delete_button" onClick = {removeCard}>
         X
         </button>
         </p>
       
-    </>
+    </div>
   );
 };
 

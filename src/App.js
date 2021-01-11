@@ -7,7 +7,7 @@ export const context = createContext({})
 function reducer(state,action) {
   switch(action.type){
     case "ADD_FORM":
-      console.log("ADDform!!!")
+      //console.log("ADDform!!!")
       return {
         ...state,
         mycourses:[...state.mycourses,action.payload],
@@ -18,7 +18,7 @@ function reducer(state,action) {
       return{...state
       };
     case "DELETE_CARD":
-      console.log("delete")
+      //console.log("delete")
       return{...state,
         mycourses: state.mycourses.filter((course) => course.ID !== action.payload), 
       };
@@ -56,7 +56,7 @@ function App() {
 
     });
     
-    if(allgrade == 0){
+    if(allgrade === 0){
       setGpa(0.0)
     }else{
       setGpa(allgrade / allcredit);
@@ -91,14 +91,15 @@ function App() {
       <h1>GPA CALCULATOR</h1>
       {/* TODO ADD UI */}
       <context.Provider value ={{state,dispatch}}>
-
+        <div id="allCardborder">
           {state.mycourses.map((item) => (
             <CourseCard id ={item.ID} grade = {item.grade} credit ={item.credit}></CourseCard>
           ))}
+        </div>
 
         <CourseForm/>
         
-        <h3>Your GPA IS {GPA.toFixed(2)}</h3>
+        <h3 id="gpa_display">Your GPA IS {GPA.toFixed(2)}</h3>
         
       </context.Provider>
     </div>

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aquamarine;
 }
 
 code {
@@ -15,4 +16,29 @@ code {
 #main {
   text-align: center;
   margin: auto;
+}
+
+#allCardborder {
+  border: 2px solid red;
+  border-radius: 8px;
+  margin-left: 35%;
+  margin-right: 35%;
+  background-color: aliceblue;
+}
+
+#add_button {
+  background-color:chartreuse;
+}
+
+#delete_button {
+  background-color: crimson;
+  color: whitesmoke;
+}
+
+#gpa_display {
+  border: 2px solid burlywood;
+  background-color: bisque;
+  border-radius: 8px;
+  margin-left: 45%;
+  margin-right: 45%;
 }
