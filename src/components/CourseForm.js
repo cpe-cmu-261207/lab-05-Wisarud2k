@@ -15,12 +15,12 @@ const CourseForm = () => {
         payload: {
           ID:input.ID,
           grade:input.grade,
-          credit:input.grade,
+          credit:input.credit,
         },
       });
       //clear input
       setInput({ID:"",grade:"4",credit:"1"});
-      
+      document.getElementById('num').value='';
     }else{
       dispatch({
         type:"ERROR"
@@ -32,7 +32,7 @@ const CourseForm = () => {
     <>
       <form onSubmit = {addform}>
         <div>
-          <input type = "text" 
+          <input id="num" type = "number" 
           placeholder="CourseID" 
           onChange = {(e) => setInput({...input,ID: e.currentTarget.value})}></input>
           <select onChange ={(e) => setInput({...input,grade: e.currentTarget.value})} >
@@ -50,6 +50,7 @@ const CourseForm = () => {
           </button>
         </div>
       </form>
+
     </>
   );
 };
